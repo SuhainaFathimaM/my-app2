@@ -115,7 +115,6 @@ function displayBagSummary() {
   let totalDiscount = 0;
   console.log('Summary');
   bagItemObjects.forEach(bagItem => {
-    // Ensure that original_price and current_price are valid numbers
     const original_price = bagItem && typeof bagItem.original_price === 'number' ? bagItem.original_price : 0;
     const current_price = bagItem && typeof bagItem.current_price === 'number' ? bagItem.current_price : 0;
 
