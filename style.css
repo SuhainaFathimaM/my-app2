@@ -86,6 +86,9 @@ header {
 .action_icon{
     color:black;
 }
+.action_name{
+    color:black;
+}
 
 .banner_container {
     margin: 40px 0;
