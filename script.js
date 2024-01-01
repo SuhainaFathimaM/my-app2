@@ -115,10 +115,6 @@ function displayBagSummary() {
   let totalDiscount = 0;
   console.log('Summary');
   bagItemObjects.forEach(bagItem => {
-    // Ensure that original_price and current_price are valid numbers
-    const original_price = typeof bagItem.original_price === 'number' ? bagItem.original_price : 0;
-    const current_price = typeof bagItem.current_price === 'number' ? bagItem.current_price : 0;
-
     totalMRP += original_price;
     totalDiscount += original_price - current_price;
   });
@@ -151,11 +147,6 @@ function displayBagSummary() {
     </button>
   `;
 }
-
-
-
-
-
 
 // function displayBagSummary() {
 //   let bagSummaryElement = document.querySelector('.bag-summary');
