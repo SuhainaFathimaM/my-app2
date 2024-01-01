@@ -86,10 +86,6 @@ header {
 .action_icon{
     color:black;
 }
-.action_name{
-    color:black;
-    text-decoration:none;
-}
 
 .banner_container {
     margin: 40px 0;
@@ -250,5 +246,9 @@ a.action_container:link {
     color:black;
 }
 
+.action_name{
+    color:black;
+    text-decoration:none;
+}
 
 
