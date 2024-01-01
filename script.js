@@ -111,16 +111,16 @@ function displayBagItems() {
 function displayBagSummary() {
   let bagSummaryElement = document.querySelector('.bag-summary');
   let totalItem = bagItemObjects.length;
-  let totalMRP = 0;
-  let totalDiscount = 0;
+  let totalMRP = bagItemObjects.length * 1945;
+  let totalDiscount = bagItemObjects.length * 900;
   console.log('Summary');
-  bagItemObjects.forEach(bagItem => {
-    const original_price = bagItem && typeof bagItem.original_price === 'number' ? bagItem.original_price : 0;
-    const current_price = bagItem && typeof bagItem.current_price === 'number' ? bagItem.current_price : 0;
+  // bagItemObjects.forEach(bagItem => {
+  //   const original_price = bagItem && typeof bagItem.original_price === 'number' ? bagItem.original_price : 0;
+  //   const current_price = bagItem && typeof bagItem.current_price === 'number' ? bagItem.current_price : 0;
 
-    totalMRP += original_price;
-    totalDiscount += original_price - current_price;
-  });
+  //   totalMRP += original_price;
+  //   totalDiscount += original_price - current_price;
+  // });
 
   let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
 
