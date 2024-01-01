@@ -242,7 +242,7 @@ header {
 .action_container {
     text-decoration: none;
 }
-a.action_container:link {
+a.action_container{
     color:black;
 }
 
