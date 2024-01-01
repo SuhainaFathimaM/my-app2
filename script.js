@@ -114,9 +114,13 @@ function displayBagSummary() {
   let totalMRP = 0;
   let totalDiscount = 0;
   console.log('Summary');
+
   bagItemObjects.forEach(bagItem => {
-    totalMRP += bagItem.original_price;
-    totalDiscount += bagItem.original_price - bagItem.current_price;
+    // Check if bagItem is not null and has the required properties
+    if (bagItem && bagItem.original_price && bagItem.current_price) {
+      totalMRP += bagItem.original_price;
+      totalDiscount += bagItem.original_price - bagItem.current_price;
+    }
   });
 
   let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
@@ -148,6 +152,7 @@ function displayBagSummary() {
     </button>
   `;
 }
+
 
 function removeFromBag(itemID) {
   bagItems = bagItems.filter(bagItemID => bagItemID != itemID);
