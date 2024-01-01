@@ -65,7 +65,7 @@ function displayItemsOnHomePage(items) {
       let rating = item.rating;
       let count = Math.round((Math.random() * 10000 + 1000));
       let id = item._id;
-
+      
       innerHtml += `
         <div class="item-container">
           <img class="item-image" src="${item.images[0]}" alt="item image">
@@ -254,7 +254,8 @@ function generateitemHTML(item) {
   let discount_percentage = Math.round((original_price - current_price) / original_price * 100);
   let return_period = 14;
   let delivery_date = 'January 15, 2024';
-
+  let a = item;
+  console.log(a);
   return `
     <div class="bag-item-container">
       <div class="item-left-part">
