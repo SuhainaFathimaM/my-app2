@@ -115,13 +115,16 @@ function displayBagSummary() {
   let totalDiscount = 0;
   console.log('Summary');
   bagItemObjects.forEach(bagItem => {
-    console.log(bagItem);
+    // Ensure that original_price and current_price are valid numbers
+    const original_price = bagItem && typeof bagItem.original_price === 'number' ? bagItem.original_price : 0;
+    const current_price = bagItem && typeof bagItem.current_price === 'number' ? bagItem.current_price : 0;
+
     totalMRP += original_price;
     totalDiscount += original_price - current_price;
   });
 
   let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
-  console.log(finalPayment);
+
   bagSummaryElement.innerHTML = `
     <div class="bag-details-container">
       <div class="price-header">PRICE DETAILS (${totalItem} Items) </div>
@@ -148,6 +151,48 @@ function displayBagSummary() {
     </button>
   `;
 }
+
+
+// function displayBagSummary() {
+//   let bagSummaryElement = document.querySelector('.bag-summary');
+//   let totalItem = bagItemObjects.length;
+//   let totalMRP = 0;
+//   let totalDiscount = 0;
+//   console.log('Summary');
+//   bagItemObjects.forEach(bagItem => {
+//     console.log(bagItem);
+//     totalMRP += original_price;
+//     totalDiscount += original_price - current_price;
+//   });
+
+//   let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
+//   console.log(finalPayment);
+//   bagSummaryElement.innerHTML = `
+//     <div class="bag-details-container">
+//       <div class="price-header">PRICE DETAILS (${totalItem} Items) </div>
+//       <div class="price-item">
+//         <span class="price-item-tag">Total MRP</span>
+//         <span class="price-item-value">₹${totalMRP}</span>
+//       </div>
+//       <div class="price-item">
+//         <span class="price-item-tag">Discount on MRP</span>
+//         <span class="price-item-value priceDetail-base-discount"> ₹${totalDiscount}</span>
+//       </div>
+//       <div class="price-item">
+//         <span class="price-item-tag">Convenience Fee</span>
+//         <span class="price-item-value">₹${CONVENIENCE_FEES}</span>
+//       </div>
+//       <hr>
+//       <div class="price-footer">
+//         <span class="price-item-tag">Total Amount</span>
+//         <span class="price-item-value">₹${finalPayment}</span>
+//       </div>
+//     </div>
+//     <button class="btn-place-order">
+//       <div class="css-xjhrni">PLACE ORDER</div>
+//     </button>
+//   `;
+// }
 
 // function displayBagSummary() {
 //   let bagSummaryElement = document.querySelector('.bag-summary');
