@@ -115,8 +115,8 @@ function displayBagSummary() {
   let totalDiscount = 0;
   console.log('Summary');
   bagItemObjects.forEach(bagItem => {
-    totalMRP += original_price;
-    totalDiscount += original_price - current_price;
+    totalMRP += bagItem.original_price;
+    totalDiscount += bagItem.original_price - bagItem.current_price;
   });
 
   let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
